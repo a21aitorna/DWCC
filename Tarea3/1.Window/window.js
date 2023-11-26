@@ -1,10 +1,18 @@
+// window js
 let ventanaRemota;
 
 function abrirVentana() {
     const permiso = confirm("¿Quieres abrir una nueva ventana?");
 
     if(permiso) {
-        ventanaRemota = window.open("remoteWindow.html", "", "width=300, height=300, top=400, left=400, toolbar=no, menubar=no").focus();
+        ventanaRemota = window.open("remoteWindow.html", "", "width=300, height=300, top=400, left=400, toolbar=no, menubar=no");
+
+        if(!ventanaRemota || ventanaRemota.close) {
+            alert("La ventana se cerro o esta bloqueada");
+        }
+        else{
+            window.addEventListener("focus", mantenerVisible)
+        }
     }
 }
 
@@ -29,6 +37,14 @@ function aumentarTamaño(){
 
 function redimensionarVentana(){
     ventanaRemota.resizeTo(500,500);
+}
+
+function mantenerVisible() {
+    if (ventanaRemota && ventanaRemota.closed) {
+        alert("La ventana fue cerrada.");
+    } else {
+        ventanaRemota.focus();
+    }
 }
 
 document.getElementById("urlInfo").innerHTML = window.location.href;
