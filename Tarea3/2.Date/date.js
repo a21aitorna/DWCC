@@ -1,9 +1,9 @@
 function diasRestantesCurso() {
     var diaActual = new Date();
-    var finalCurso = new Date(diaActual.getFullYear(), 5, 25);
-    var milisegundosDia = 24 * 60 * 60 * 1000;
-    var diasRestantes = Math.floor((finalCurso.getTime() - diaActual.getTime()) / milisegundosDia);
-    console.log("Quedan ".concat(diasRestantes, " para que acabe el curso"));
+    var finalCurso = new Date(diaActual.getFullYear() + 1, 5, 25);
+    var milisegundosRestantes = finalCurso.getTime() - diaActual.getTime();
+    var diasRestantes = Math.ceil(milisegundosRestantes / (1000 * 60 * 60 * 24));
+    console.log("Quedan ".concat(diasRestantes, " dias para que acabe el curso"));
 }
 function cumpleFinde() {
     var cumpleanhos = new Date(prompt("Introduce tu cumpleaños"));
@@ -11,10 +11,9 @@ function cumpleFinde() {
     for (var ano = anoActual; ano <= 2100; ano++) {
         var diaAniversario = new Date(ano, cumpleanhos.getMonth(), cumpleanhos.getDate());
         if (diaAniversario.getDay() === 6 || diaAniversario.getDay() === 0) {
-            let mensaje = "Mi cumpleanos caera en fin de semana los anos ".concat(ano);
+            console.log("Mi cumpleanos caera en fin de semana los anos ".concat(ano));
         }
     }
-    console.log(mensaje);
 }
 function fechasFormatos(formato) {
     var fechaActual = new Date();

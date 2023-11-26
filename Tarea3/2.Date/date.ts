@@ -1,11 +1,11 @@
 function diasRestantesCurso(): void{
     const diaActual:Date = new Date();
-    const finalCurso:Date = new Date(diaActual.getFullYear(),5,25);
+    const finalCurso:Date = new Date(diaActual.getFullYear()+1,5,25);
 
-    const milisegundosDia: number = 24*60*60*1000;
-    const diasRestantes: number = Math.floor((finalCurso.getTime() - diaActual.getTime())/milisegundosDia);
+   const milisegundosRestantes: number = finalCurso.getTime()-diaActual.getTime();
+   const diasRestantes: number = Math.ceil(milisegundosRestantes/(1000*60*60*24));
 
-    console.log(`Quedan ${diasRestantes} para que acabe el curso`);
+    console.log(`Quedan ${diasRestantes} dias para que acabe el curso`);
 }
 
 
