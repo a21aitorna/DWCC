@@ -25,18 +25,22 @@ function cerrarVentana(){
 
 function moverVentanaUno(){
     ventanaRemota.moveBy(50,20);
+    ventanaRemota.focus();
 }
 
 function moverVentanaDos(){
     ventanaRemota.moveTo(0,0);
+    ventanaRemota.focus();
 }
 
 function aumentarTamaño(){
     ventanaRemota.resizeBy(50,50);
+    ventanaRemota.focus();
 }
 
 function redimensionarVentana(){
     ventanaRemota.resizeTo(500,500);
+    ventanaRemota.focus();
 }
 
 function mantenerVisible() {
