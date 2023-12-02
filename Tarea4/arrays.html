@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <script src="arrays.js"></script>
+</head>
+<body>
+    <form method="POST">
+        <button onClick="mirarNumeroElementos(paises)">Mirar el numero de paises</button><br>
+        <button onClick="mostrarPaises(paises)">Mostrar paises</button><br>
+        <button onClick="mostrarPaisesInversa(paises)">Mostrar paises a la inversa</button><br>
+        <fieldset>
+            <label for="nuevoPaisInicio">Introduce un nuevo pais para anhadir al principio: </label>
+            <input type="text" id="nuevoPaisInicio" name="nuevoPaisInicio">
+            <button type="button" onClick="anhadirPaisComienzo(paises)">Anhadir nuevo pais al principio</button>
+        </fieldset>
+        <fieldset>
+            <label for="nuevoPaisFinal">Introduce un nuevo pais para anhadir al final: </label>
+            <input type="text" id="nuevoPaisFinal" name="nuevoPaisFinal">
+            <button type="button" onClick="anhadirPaisFinal(paises)">Anhadir nuevo pais al final</button>
+        </fieldset>
+        <button onClick="eliminarElementoComienzo(paises)">Eliminar primer elemento del array</button><br>
+        <button onClick="eliminarElementoFinal(paises)">Eliminar elemento al final del array</button><br>
+        <fieldset>
+            <label for="indice">Introduce la posicion del elemento que quieres buscar: </label>
+            <input type="number" id="indice" name="indice">
+            <button type="button" onClick="buscarElemento(paises)">Buscar elemento por indice</button><br>
+        </fieldset>
+        <fieldset >
+            <label for="paisBuscar">Introduce el pais para saber su posicion: </label>
+            <input type="text" id="paisBuscar" name="paisBuscar"><br>
+            <button type="button" onClick="buscarPosicion(paises)">Indicar posicion del elemento</button>
+        </fieldset>
+        <fieldset >
+            <label for="primeraPosicion">Introduce la primera posicion que desees: </label>
+            <input type="number" id="primeraPosicion" name="primeraPosicion"><br>
+            <label for="segundaPosicion">Introduce la segunda posicion que desees: </label>
+            <input type="number" id="segundaPosicion" name="segundaPosicion"><br>
+            <button type="button" onClick="mostrarElementosMedio(paises)">Mostrar elementos del medio</button>
+        </fieldset>
+    </form>
+</body>
+</html>
