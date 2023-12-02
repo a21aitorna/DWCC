@@ -4,7 +4,8 @@ const paises: string[] = ["Albania","Alemania","Andorra","Armenia","Austria","Az
 
 
 function mirarNumeroElementos(arrayPaises:string[]){  
-    console.log(`El numero de paises en el array es ${arrayPaises.length+1}`);
+    console.log(`El numero de paises en el array es ${arrayPaises.length}`);
+    console.log(arrayPaises);
 }
 
 function mostrarPaises(arrayPaises:string[]){

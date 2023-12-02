@@ -11,7 +11,8 @@ var paises = ["Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiy�
     "España", "Estonia", "Finlandia", "Francia", "Georgia", "Grecia", "Hungría", "Irlanda", "Islandia", "Italia", "Kazajistán", "Kosovo", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Moldavia",
     "Mónaco", "Montenegro", "Noruega", "Países Bajos", "Polonia", "Portugal", "Reino Unido", "República Checa", "Rumanía", "Rusia", "Suecia", "Suiza"];
 function mirarNumeroElementos(arrayPaises) {
-    console.log("El numero de paises en el array es ".concat(arrayPaises.length + 1));
+    console.log("El numero de paises en el array es ".concat(arrayPaises.length));
+    console.log(arrayPaises);
 }
 function mostrarPaises(arrayPaises) {
     for (var i in arrayPaises) {
