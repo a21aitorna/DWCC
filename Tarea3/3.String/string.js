@@ -12,7 +12,7 @@ function informacionUsuario() {
         //Mostrar separado nombre, apellido1 y apellido2
         var _a = nombreCompleto.split(' '), nombre = _a[0], apellido1 = _a[1], apellido2 = _a[2];
         //Nombre de usuario (nombre en minusculas, incial apellido1 en mayuscula e inicial apellido2 en mayuscula)
-        var nombreUsuario = "".concat(nombre.toLowerCase()).concat(apellido1.charAt(0).toUpperCase()).concat(apellido2.charAt(0).toUpperCase());
+        var nombreUsuario = "".concat(nombre.toLowerCase()).concat(apellido1.toUpperCase().charAt(0)).concat(apellido2.toUpperCase());
         console.log("La longitud del nombre con espacios es ".concat(longitudNombreConEspacios));
         console.log("La longitud del nombre sin espacios es ".concat(longitudNombreSinEspacios));
         console.log("El nombre en minusculas es ".concat(nombreCompletoMinusculas));

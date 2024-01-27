@@ -1,0 +1,13 @@
+#formularioDisco label {
+    display: inline-block;
+    width: 200px; 
+    vertical-align: top; 
+}
+  
+#formularioDisco input {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px; 
+}
+
+  
