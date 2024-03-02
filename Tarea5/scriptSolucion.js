@@ -1,3 +1,29 @@
+function setCookie(name, value, days){
+    const expires = new Date();
+    expires.setTime(expires.getTime()+days*24*60*60*1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name){
+    const cookieName = `${name}=`;
+    const cookies = document.cookie.split(';');
+    for (let i=0;i<cookies.length;i++){
+        let cookie = cookies[i].trim();
+        if(cookie.indexOf(cookieName) === 0){
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return '';
+}
+
+function intentosEnvio(){
+    let intentos = parseInt(getCookie('intentos')) || 0;
+    intentos++;
+    setCookie('intentos', intentos, 365);
+    return intentos;
+}
+
+
 function convertirMayusculas(elemento){
     elemento.value = elemento.value.toUpperCase();
 }
@@ -11,7 +37,7 @@ function comprobarCampoExpReg(elemento, regex, mensaje){
 }
 
 function comprobarEdad(elemento, mensaje){
-    if(elemento.value<0 || elemento.value>105){
+    if(isNaN(elemento.value) || elemento.value<0 || elemento.value>105){
         mostrarError(mensaje);
         elemento.focus();
     }
@@ -109,19 +135,26 @@ document.getElementById('hora').addEventListener("blur", function(){
     */
 });
 
-//Para confirmar el envío del formulario probé de dos formas
-const formulario = document.getElementById('formulario');
-formulario.addEventListener('submit', function(event){
-    const confirmacion = window.confirm('¿Estás seguro de enviar el formulario?');
-    if(!confirmacion){
-        event.preventDefault();
-    }
-});
 
-// const enviarFormulario = document.getElementById('enviar');
-// enviarFormulario.addEventListener('click', function(event){
+
+//Para confirmar el envío del formulario probé de dos formas
+// const formulario = document.getElementById('formulario');
+// formulario.addEventListener('submit', function(event){
 //     const confirmacion = window.confirm('¿Estás seguro de enviar el formulario?');
-//         if(!confirmacion){
-//             event.preventDefault();
-//         }
-// });
+//     if(!confirmacion){
+//         event.preventDefault();
+//         let intentos = intentosEnvio();
+//         document.getElementById('intentos').innerHTML =  `Intento de envíos del formulario: ${intentos}`;
+//     }
+    
+// }, false);
+
+const enviarFormulario = document.getElementById('enviar');
+enviarFormulario.addEventListener('click', function(event){
+    const confirmacion = window.confirm('¿Estás seguro de enviar el formulario?');
+        if(!confirmacion){
+            event.preventDefault();
+            let intentos = intentosEnvio();
+            document.getElementById('intentos').innerHTML =  `Intento de envíos del formulario: ${intentos}`;
+        }
+});
