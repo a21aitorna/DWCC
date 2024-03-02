@@ -146,8 +146,10 @@ document.getElementById('hora').addEventListener("blur", function(){
 //         let intentos = intentosEnvio();
 //         document.getElementById('intentos').innerHTML =  `Intento de envíos del formulario: ${intentos}`;
 //     }
-    
-// }, false);
+    // else{
+    //     setCookie('intentos',0,-365);
+    // }      
+// });
 
 const enviarFormulario = document.getElementById('enviar');
 enviarFormulario.addEventListener('click', function(event){
@@ -156,5 +158,8 @@ enviarFormulario.addEventListener('click', function(event){
             event.preventDefault();
             let intentos = intentosEnvio();
             document.getElementById('intentos').innerHTML =  `Intento de envíos del formulario: ${intentos}`;
+        }
+        else{
+            setCookie('intentos',0,-365);
         }
 });
