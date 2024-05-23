@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function(){
         event.preventDefault();
 
         if (!validarFormulario()) {
+            //Termina la ejecución del submit en caso de que sea false, evitando que se envíe al servidor.
             return;
         }
         //Creo un objeto de formData, donde se recopilan los datos del formulario HTML
